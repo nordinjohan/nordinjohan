@@ -1,0 +1,82 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle($this->translate('Övar Zend'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+                        ->prependStylesheet($this->basePath() . '/css/style.css')
+                        ->prependStylesheet($this->basePath() . '/css/bootstrap-theme.min.css')
+                        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css') ?>
+
+        <!-- Scripts -->
+        <?php echo $this->headScript()
+            ->prependFile($this->basePath() . '/js/bootstrap.min.js')
+            ->prependFile($this->basePath() . '/js/jquery.min.js')
+            ->prependFile($this->basePath() . '/js/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+            ->prependFile($this->basePath() . '/js/html5shiv.js',   'text/javascript', array('conditional' => 'lt IE 9',))
+            ->appendFile($this->basePath() . '/jquery/login.js', 'text/javascript')
+            ->appendFile($this->basePath() . '/jquery/allround.js', 'text/javascript')
+        ; ?>
+
+
+
+    </head>
+    <body>
+
+        <div id="container">
+
+        <div id="header">
+            <div class="header_logo"><a href=" <?php echo $this->url ('home') ;?> ">Zend</a></div>
+
+            <?php if(!$this->zfcUserIdentity()): ?>
+                <div class="header_login_btn open_loginbox">Logga in</div>
+            <?php else: ?>
+                <div class="header_login_btn">
+                    Du är inloggad som 
+                    <b><?php echo $this->zfcUserIdentity()->getEmail(); ?></b> 
+                    | <a href="<?php echo $this->url('zfcuser/logout') ?>">Logga ut</a>
+                </div>
+            <?php endif?>
+
+            <div class="clearfix"></div>
+            <div class="login_box">
+                <?php echo $this->zfcUserLoginWidget(); ?>
+            </div>
+        </div>
+
+        <div id="menybar_left">
+            <ul class="meny">
+                <a href=" <?php echo $this->url ('home') ;?> "><li>Visa alla register</li></a>
+
+                <li 
+                    <?php if(!$this->zfcUserIdentity()) { ?> 
+                    class="UserApproval"> Lägg till nytt register 
+                    <?php } ?> 
+                    <?php if($this->zfcUserIdentity())  { ?> 
+                    > <a href="<?php echo $this->url ('application/default', array ('controller' => 'newregister')); ?>">Lägg till nytt register</a> 
+                    <?php } ?> 
+                </li>
+
+            </ul>
+        </div>
+
+        <div id="content_container">
+            <div class="content">
+                <?php echo $this->content; ?>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+            
+        </div>
+
+    </body>
+</html>

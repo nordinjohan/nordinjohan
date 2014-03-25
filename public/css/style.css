@@ -1,0 +1,151 @@
+body {
+  color: #666;
+}
+.clearfix {
+  clear: both;
+}
+a:link {
+  text-decoration:none;
+  color: #666;
+}
+a:visited {
+  text-decoration:none;
+  color: #666;
+}
+a:hover {
+  text-decoration:none;
+  color: #666;
+}
+a:active {
+  text-decoration:none;
+  color: #666;
+}
+
+.login_textfield {
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #CCC;
+    margin-left: 20px;
+    float: left;
+}
+.login_button {
+    color: #FFF;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #CCC;
+    margin-left: 20px;
+    background-color: #33A1C9;
+    float: left;
+}
+.textfield {
+    width: 100%;
+    padding: 10px;
+    border: solid 1px #CCC;
+    display: block;
+    margin-bottom: 10px;
+}
+.submitbutton {
+    width: 100%;
+    padding: 10px;
+    border: solid 1px #CCC;
+}
+
+#header {
+    position: relative;
+    height: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    color: #FFF;
+    background-color: #33A1C9;
+}
+.header_logo {
+  float: left;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+.header_login_btn {
+  float: right;
+  margin-top: 30px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.login_box {
+  position: absolute;
+  right: 0px;
+  top: 80px;
+  background-color: #dbdbdb;
+  border: solid 1px #CCC;
+  padding: 20px;
+  display: none;
+  z-index: 1;
+  border-right: none;
+}
+
+#container {
+  width: 1102px;
+  height: 502px;
+  border: solid 1px #CCC;
+  left: 50%;
+  top: 50%;
+  margin-left: -551px;
+  margin-top: -251px;
+  position: absolute;
+}
+#menybar_left {
+  float: left;
+  width: 340px;
+  height: 420px;
+  border-right: solid 1px #CCC;
+  background-color: #dbdbdb;
+}
+ul.meny {
+  list-style: none;
+  padding: 0px;
+}
+.meny li {
+  margin-bottom: 20px;
+  padding-top: 20px;
+  margin-left: 20px;
+  border-bottom: solid 1px #959595;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#content_container {
+  float: left;
+  width: 760px;
+  height: 422px;
+  padding: 10px;
+  overflow: auto;
+}
+.content {
+  border: solid 1px #CCC;
+}
+.main_header {
+  background-color: #dbdbdb;
+  padding: 5px;
+}
+.content_view {
+  margin: 5px;
+}
+.register_holder {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  display: block;
+  border: solid 1px #CCC; 
+  position: relative;
+}
+.delete_btn {
+  font-size: 12px;
+  padding: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  border: solid 1px #CCC;
+  background-color: #f9becc;
+}

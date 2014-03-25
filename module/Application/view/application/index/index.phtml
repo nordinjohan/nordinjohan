@@ -1,0 +1,48 @@
+
+
+           
+<div class="main_header">Alla register</div>
+<div class="content_view">
+
+	<?php foreach ($result as $results) { ?>
+		<div class="register_holder">
+			<?php echo $results['reg_name']; ?>,
+			<?php echo $results['reg_desc']; ?>,
+			skapades 
+			<?php echo $results['reg_date']; ?> 
+
+			<a href=" <?php echo $this->url
+
+			('application/default', array (
+			'controller' => 'newregister', 
+			'action' => 'deleteregister', 
+			'id' => $results['reg_id'] 
+				)); 
+				?>"
+
+			>  <div class="delete_btn"> Radera </div> </a>
+
+		</div>
+	<?php } ?>
+
+</div>
+  
+
+
+
+<?php { /*?>
+<?php if(!$this->zfcUserIdentity()): ?>
+<?php else: ?>
+
+    <?php echo $this->user_email; ?>
+    <?php echo $this->user_id; ?>
+
+<?php endif?>
+
+<?php foreach ($result as $results) { ?>
+
+<?php echo $results['email']; ?> </br>
+
+<?php } ?>
+<? } */ } ?>
+
